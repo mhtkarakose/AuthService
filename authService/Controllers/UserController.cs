@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace authService.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class UserController : ControllerBase
@@ -41,7 +42,7 @@ namespace authService.Controllers
             return Ok(response);
         }
 
-        [Authorize]
+        [AllowAnonymous]
         [HttpPost("refresh-token")]
         public async Task<IActionResult> RefreshToken([FromBody] RefreshToken refreshToken)
         {
@@ -52,8 +53,7 @@ namespace authService.Controllers
 
             return Ok(response);
         }
-
-        [Authorize]
+ 
         [HttpPost("revoke-refresh-token")]
         public async Task<IActionResult> RevokeRefreshToken([FromBody] RevokeToken model)
         {
