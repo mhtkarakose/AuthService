@@ -4,9 +4,7 @@ using authService.Data;
 using authService.Models;
 using authService.Services.User;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Mvc; 
 
 namespace authService.Controllers
 {
